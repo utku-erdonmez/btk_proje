@@ -1,0 +1,111 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #f2f2f2;
+    font-family: sans-serif;
+    color: #333333;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0;
+    padding-top: 20px; 
+}
+
+.back-button-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 10px; 
+}
+
+.back-button {
+    background: linear-gradient(135deg, #4a90e2, #1c5db6);
+    color: white;
+    padding: 10px 20px;
+    font-size: 1em;
+    font-weight: bold;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.back-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.back-button:active {
+    transform: translateY(1px);
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.15);
+}
+
+
+.container {
+    display: flex;
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    max-width: 1200px;
+    width: 100%;
+  
+    align-items: flex-start;
+}
+
+
+.video-panel {
+    flex: 1;
+    padding-right: 20px;
+}
+
+#youtube-video {
+    width: 100%;
+    height: 280px;
+}
+
+
+.output-panel {
+    flex: 2;
+    padding-left: 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+.output-panel h2 {
+    color: #333333;
+    font-size: 1.5em;
+    margin: 0;
+    padding: 0;
+}
+
+.rendered-output {
+    margin-top: 10px;
+    padding: 10px;
+    border: 1px solid #cccccc;
+    border-radius: 5px;
+    background-color: #ffffff;
+    color: #333333;
+    overflow-y: auto;
+    height: 100%;
+}
+
+.rendered-output::-webkit-scrollbar {
+    width: 8px;
+}
+
+.rendered-output::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+.rendered-output::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 5px;
+}
+
+.rendered-output::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BTK_proje</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/index_page.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Gemini ile YouTube Ders Notları</h1> 
+        <h2>YouTube videolarından kolayca ders notları çıkarın</h2> 
+        <p>İzlemek istediğiniz videonun URL'sini girin ve "Özeti Oluştur" butonuna tıklayarak hızlıca özetlenmiş notlarınıza ulaşın.</p>
+        
+        <!-- Form ve Output Container -->
+        <div class="form-output-container">
+            <form id="summary-form" action="/generate-summary" method="POST">
+                <input type="text" name="url" id="video-url" placeholder="Video URL'sini girin" required>
+                <div class="spinner" id="spinner" style="display: none;">Özet oluşturuluyor...</div>
+                <button type="submit" id="generate-summary">Özeti Oluştur</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Bilgilendirme Pop up -->
+    <div id="popup" class="popup">
+        <div class="popup-content">
+            <h2>Bilgilendirme</h2>
+            Notlarınızın hazırlanması birkaç dakika sürebilir. Bu süre zarfında notlar, Gemini modeli kullanılarak zenginleştirilmekte.
+            Bu nedenle, notlar video içeriğine büyük ölçüde bağlı kalmasına rağmen, orijinal metinle tam olarak örtüşmeyebilir. 
+            Lütfen bu durumu göz önünde bulundurunuz.
+            <br>
+            <button id="close-popup">Tamam</button>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>
